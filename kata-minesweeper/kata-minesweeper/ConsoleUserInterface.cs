@@ -110,13 +110,13 @@ namespace kata_minesweeper
                 throw new ArgumentException();
             }
 
-            if (integer < 10)
+            if (integer < 9)
             {
                 return $"0{integer + 1}"; // Plus one so display indices starts at 1 not 0
             }
             else
             {
-                return integer.ToString();
+                return (integer + 1).ToString();
             }
         }
     }
