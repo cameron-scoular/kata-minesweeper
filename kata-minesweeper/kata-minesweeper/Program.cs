@@ -16,7 +16,7 @@ namespace kata_minesweeper
             
             var gameProcessor = new GameProcessor(boardGenerator, userInterface, new GameState());
 
-            gameProcessor.SetupGame(15, 15, 0.2);
+            gameProcessor.SetupGame(3, 3, 0.2);
             
             gameProcessor.PlayGame();
 

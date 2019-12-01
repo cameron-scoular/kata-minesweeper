@@ -7,6 +7,8 @@ namespace kata_minesweeper
     public class SafeCell : ICell
     {
         private IRenderer CellRenderer;
+
+        public static int SafeCellsRemaining;
      
         public CellStatus CellStatus { get; private set; }
 
@@ -22,6 +24,7 @@ namespace kata_minesweeper
         public void Interact(GameProcessor gameProcessor)
         {
             CellStatus = CellStatus.Uncovered;
+            SafeCellsRemaining--;
         }
 
         public char GetRenderSymbol()

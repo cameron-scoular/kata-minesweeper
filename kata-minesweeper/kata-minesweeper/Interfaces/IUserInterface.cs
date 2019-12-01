@@ -9,5 +9,6 @@ namespace kata_minesweeper.Interfaces
         Coordinate PromptMove(ICell[,] board);
 
         void LoseGame();
+        void WinGame();
     }
 }

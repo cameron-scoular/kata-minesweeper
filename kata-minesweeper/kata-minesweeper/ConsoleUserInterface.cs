@@ -77,6 +77,11 @@ namespace kata_minesweeper
             Console.WriteLine("You have lost the game!");
         }
 
+        public void WinGame()
+        {
+            Console.WriteLine("Congratulations, you have won the game!");
+        }
+
         private static void WriteXAxisLine(ICell[,] board)
         {
             var rowLineStringBuilder = new StringBuilder();

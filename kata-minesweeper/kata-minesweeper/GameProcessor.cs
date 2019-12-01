@@ -21,10 +21,11 @@ namespace kata_minesweeper
             while (GameState.GameIsActive)
             {
                 UserInterface.DisplayBoard(GameState.GameBoard);
-                var selectedCoordinates = UserInterface.PromptMove(GameState.GameBoard);
+                var selectedMoveCoordinates = UserInterface.PromptMove(GameState.GameBoard);
                 
-                GameState.GameBoard[selectedCoordinates.XPos, selectedCoordinates.YPos].Interact(this);
-                
+                GameState.GameBoard[selectedMoveCoordinates.XPos, selectedMoveCoordinates.YPos].Interact(this);
+
+                CheckWinCondition();
             }
         }
 
@@ -35,6 +36,16 @@ namespace kata_minesweeper
             UserInterface.WelcomePlayer();
         }
 
+        public void CheckWinCondition()
+        {
+            if (SafeCell.SafeCellsRemaining == 0)
+            {
+                UserInterface.DisplayBoard(GameState.GameBoard);
+                UserInterface.WinGame();
+                GameState.GameIsActive = false;
+            }
+        }
+        
         public void LoseGame()
         {
             GameState.GameIsActive = false;

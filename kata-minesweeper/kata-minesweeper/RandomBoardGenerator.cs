@@ -65,10 +65,12 @@ namespace kata_minesweeper
 
         public void AddSafeCellsToBoard(List<Coordinate> freeCoordinateList)
         {
+            SafeCell.SafeCellsRemaining = 0;
             
             foreach (var freeCoordinate in freeCoordinateList)
             {
                 Board[freeCoordinate.XPos , freeCoordinate.YPos ] = new SafeCell(new CellRenderer());
+                SafeCell.SafeCellsRemaining++;
             }
 
             foreach (var freeCoordinate in freeCoordinateList)
